@@ -87,6 +87,10 @@ body {
     padding: 0%;
   }
 h2 img{
-  width: 10px;
-  height: 10px;
+  width: 30px;
+  height: 30px;
+}
+h2 {
+  font-size: 100%;
+
 }

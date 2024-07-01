@@ -60,22 +60,48 @@ function intentar(){
             return
         }
         chances--
+        
             if (chances==0){
                 terminar("<h1>PERDISTE!😖</h1>")
+                vidamenos();
                 return
+                
             }
+            vidamenos();
     }
     function vidamenos(){
         let contenedor = document.getElementById('vida')
-        contenedor.innerHTML = "<h2></h2>"
+        switch (chances){
+            case 5:
+        contenedor.innerHTML = "<h2>      5 Intentos 😃</h2>"
+         break;
+            case 4:
+        contenedor.innerHTML = "<h2>      4 Intentos 🙂</h2>"
+        break;
+            case 3:
+        contenedor.innerHTML = "<h2>      3 Intentos 🤨</h2>"
+        break;
+            case 2:
+        contenedor.innerHTML = "<h2>      2 Intentos 😟</h2>"
+        break;
+            case 1:
+        contenedor.innerHTML = "<h2>      1 Intentos 🥺</h2>"
+        break;
+            case 0:
+        contenedor.innerHTML = "<h2>      No te quedan intentos 💀</h2>"
+        break;
+        }
     }
 
     function terminar(mensaje){
         const INPUT = document.getElementById("guess-input");
         INPUT.disabled = true;
-        button.disabled = true;
+        button.innerHTML="Reiniciar"
         let contenedor = document.getElementById('guesses');
         contenedor.innerHTML = mensaje;
-    }
+        button.addEventListener('click', _ => 
+            location.reload());
+        }
+    
 
 //😎😃🙂🤨😟🥺💀🤩//
